@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+  background-color: #1A0B2E;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.hamburger{
+    color: white;
+    display: none;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-left: 200px;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+
+  margin: 0 auto;   
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.btn{
+    border-radius: 1000px;
+    width: 135px;
+    height: 44px;
+    margin-right: 200px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #ffb703, #ff2bdc);
+
+}
+
+
+.logo span {
+  background: linear-gradient(90deg, #ff2bdc, #8f3cff);
+  background-clip: text;
+  color: transparent;
+  
+}
+
+/* banner */
+
+
+.hero-png{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+   
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-png img {
+    width: 100%;
+    height: auto;
+}
+
+.circle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.circle img {
+    width: 400px; 
+    height: 400px;
+}
+
+
+
+
+
+
+
+/* responsive codes */
+
+@media screen and (max-width: 576px) {
+    .nav-links,
+    .btn{
+        display: none;
+    }
+
+    .hamburger{
+    color: white;
+    display: inline;
+    margin-left: 210px;
+    
+}
+.logo{
+    margin-left: 20px;
+}
+}
