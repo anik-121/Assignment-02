@@ -50,14 +50,21 @@ nav {
 }
 
 .btn{
+    color: #ffffff;
     border-radius: 1000px;
     width: 135px;
     height: 44px;
     margin-right: 200px;
     margin-top: 25px;
     margin-bottom: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
     background: linear-gradient(90deg, #ffb703, #ff2bdc);
 
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 
@@ -86,10 +93,7 @@ nav {
     height: 100vh;
 }
 
-.hero-png img {
-    width: 100%;
-    height: auto;
-}
+
 
 .circle {
     position: absolute;
@@ -104,7 +108,142 @@ nav {
     height: 400px;
 }
 
+.microphone {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.microphone img {
+    width: 135px;
+    height: auto;
+    display: block;
+}
+
+
+.badge {
+    position: absolute;
+    top: 40px;
+    right: 38px;
+    background: #00ff88; 
+    color: #1a1a2e; 
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 15px;
+
+}
+
+ .hero-content {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    /* z-index: 4; */
+    /* width: 90%; */
+    /* max-width: 800px; */
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.spotify-btn {
+    background: linear-gradient(90deg, #ffb703, #ff2bdc);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.spotify-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.subscribe-btn {
+    background: transparent;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background: #00ff88;
+    color: #1a1a2e;
+}
+
+subscribe-img {
+    font-size: 18px;
+     color: #1a1a2e;
+    
+}
+/* animation */
+
+
+.microphone {
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+    }
+}
+
+.circle {
+    animation: pulse-slow 3s ease-in-out infinite;
+}
+@keyframes pulse-slow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
 
 
 
@@ -112,19 +251,151 @@ nav {
 
 /* responsive codes */
 
-@media screen and (max-width: 576px) {
-    .nav-links,
-    .btn{
-        display: none;
+
+
+@media screen and (min-width: 577px) and (max-width: 991px) {
+    
+    
+    .logo {
+        margin-left: 50px;
+        font-size: 24px;
+    }
+    
+    .btn {
+        margin-right: 50px;
+        width: 120px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
     }
 
-    .hamburger{
-    color: white;
-    display: inline;
-    margin-left: 210px;
+     .circle {
+        top: 16%;
+    }
     
+    .circle img {
+        width: 200px;
+        height: 200px;
+    }
+    .microphone {
+        top: 16%;
+    }
+    
+    .microphone img {
+        width: 80px;
+    }
+    
+    .badge {
+        top: 10px;
+        right: 15px;
+        font-size: 8px;
+        padding: 5px 12px;
+
 }
-.logo{
-    margin-left: 20px;
+ .hero-title {
+        font-size: 52px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-buttons {
+        gap: 15px;
+    }
+    
+    .spotify-btn,
+    .subscribe-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
 }
+
+/* Small devices (up to 576px) - Mobile */
+@media screen and (max-width: 576px) {
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .nav-links,
+    .btn {
+        display: none;
+    }
+    
+    .hamburger {
+        color: white;
+        display: inline;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    .logo {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    
+    .banner {
+        min-height: 100vh;
+
+    }
+    
+    .circle {
+        top: 10%;
+    }
+    
+    .circle img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .microphone {
+        top: 10%;
+    }
+    
+    .microphone img {
+        width: 40px;
+    }
+    
+    .badge {
+        top: 8px;
+        right: 6px;
+        font-size: 8px;
+        padding: 4px 8px;
+    }
+
+    .hero-content {
+        bottom: 5%;
+        width: 95%;
+    }
+    
+    .hero-title {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        gap: 12px;
+    }
+    
+    .spotify-btn,
+    .subscribe-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 14px;
+    }
 }
